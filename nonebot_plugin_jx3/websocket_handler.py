@@ -52,7 +52,7 @@ async def websocket_handler():
                             # print(data)
                             action = msg["action"]
                             # print(action)
-                            data = msg["data"]
+                            data = data = msg.get('data',{})
                             if action == 2004:
                                 asyncio.create_task(send_tieba(data))
                             elif action == 1009:
