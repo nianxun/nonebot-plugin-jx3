@@ -362,7 +362,7 @@ async def handle_kaifu(event, args: Message = CommandArg()):
         await jx3api_kaifu.finish(response["msg"])
     else:
         await jx3api_kaifu.finish("请求出错，请稍后再试")
-jx3api_qiyu = on_command(head + "奇遇")
+jx3api_qiyu = on_command(head + "查询")
 @jx3api_qiyu.handle()
 async def handle_qiyu(event, args: Message = CommandArg()):
     alldata = args.extract_plain_text().strip().split()
@@ -371,7 +371,7 @@ async def handle_qiyu(event, args: Message = CommandArg()):
     if len(alldata) == 1:
         name = alldata[0]
     else:
-        await jx3api_qiyu.finish("参数数量不正确，请参考：-奇遇 赤瞳竹")
+        await jx3api_qiyu.finish("参数数量不正确，请参考：-查询 赤瞳竹")
 
     params = {
         "scale": 1,
