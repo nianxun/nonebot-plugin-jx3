@@ -6,4 +6,4 @@ class Config(BaseModel):
     jx3_tuilan_ticket: str=""
     jx3wss_token: str=""
     jx3_command_header: str=""
-    jx3_bot_name:str ="团团"
+    jx3_bot_name:str ="秃头"
