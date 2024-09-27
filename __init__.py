@@ -311,7 +311,7 @@ async def handle_heishi(event, args: Message = CommandArg()):
         "token": token
     }
     print(params)
-    response = await jx3api_request("/view/trade/record", params)  # 修改API的endpoint
+    response = await jx3api_request("/view/trade/records", params)  # 修改API的endpoint
     print(response)
     if response["code"] == 200:
         await jx3api_heishi.finish(MessageSegment.image(response['data']['url']))
