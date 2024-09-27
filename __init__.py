@@ -80,7 +80,7 @@ async def handle_jx3api_gold_price(event, args: Message = CommandArg()):
         "token": token
     }
     print(params)
-    response = await jx3api_request("/view/trade/demon", params)
+    response = await jx3api_request("/view/active/calendar", params)
     print(response)
     if response["code"] == 200:
         await jx3api_gold_price.finish(MessageSegment.image(response['data']['url']))
@@ -108,7 +108,7 @@ async def handle_jx3api_active_today(event, args: Message = CommandArg()):
         "token": token
     }
     print(params)
-    response = await jx3api_request("/view/active/current", params)  # 修改API的endpoint
+    response = await jx3api_request("/view/active/calendar", params)  # 修改API的endpoint
     print(response)
     if response["code"] == 200:
         await jx3api_active_today.finish(MessageSegment.image(response['data']['url']))
@@ -293,7 +293,7 @@ async def handle_match_school(event, args: Message = CommandArg()):
         await jx3api_match_school.finish("请求出错，请稍后再试")
 
 
-jx3api_heishi = on_command(head + "黑市")
+jx3api_heishi = on_command(head + "物价")
 
 
 @jx3api_heishi.handle()
